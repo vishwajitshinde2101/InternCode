@@ -1,0 +1,179 @@
+entity Tenent{
+    firstName String required maxlength(50),
+    lastName String required maxlength(50),
+    companyName String required maxlength(50),
+    userName String required maxlength(50),
+    companyUrl String required maxlength(50),
+    CompanyContact String required maxlength(10),
+    Contact String required maxlength(10),
+    contactPersonName String required maxlength(10),
+    logo String required maxlength(10),
+    CompanyEmail String required maxlength(250),
+    email String required maxlength(250),
+    addressLine1 String required maxlength(50),
+    addressLine2 String required maxlength(50),
+    linkedInPage String maxlength(250),
+    instagramPage String maxlength(250),
+    facebookPage String maxlength(250),
+    twitter String maxlength(250),
+    website String maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+entity Student {
+    firstName String required maxlength(50),
+    lastName String required maxlength(50),
+    userName String required maxlength(50),
+    Contact String required maxlength(10),
+    email String required maxlength(250),
+    addressLine1 String required maxlength(500),
+    linkedInPage String maxlength(250),
+    twitter String maxlength(250),
+    website String maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+entity InternshipCategory {
+    name String required maxlength(50),
+    description String required maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+entity Internships {
+    name String required maxlength(50),
+    description String required maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+}
+
+entity Level {
+    name String required maxlength(50),
+    description String required maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+
+}
+
+entity Module {
+    name String required maxlength(50),
+    description String required maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+}
+
+entity Points {
+    name String required maxlength(50),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+}
+
+entity Notes {
+    name String required maxlength(100),
+    desc String required maxlength(500),
+    imgUrl String required maxlength(500),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+}
+
+
+entity Exam {
+    title String required maxlength(100),
+    description String required maxlength(500),
+    maxMarks String required,
+    numberOfQuestions Integer required min(1),
+    durationMinutes Integer required min(1),
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required,
+    isCompleted Boolean required
+}
+
+entity Question {
+    question String required,
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+entity Option {
+    text String required,
+    isCorrect Boolean required,
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+
+entity Certificate {
+    completionDate Instant required,
+    grade Double required,
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+
+entity StudentResponse {
+    isCompleted Boolean,
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+entity ContactUs {
+    name String required,
+    email String required,
+    message String required,
+    createdAt Instant,
+    createdBy String,
+    updatedAt Instant,
+    updatedBy String,
+    active Boolean required
+}
+
+dto * with mapstruct
+
+service * with serviceImpl
+
+filter *
